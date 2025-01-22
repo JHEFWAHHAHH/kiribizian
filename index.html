@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>бизнес сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #003366;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to bottom, #e6f7ff, #b3e0ff);
+            overflow: hidden;
+        }
+
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: moveClouds 20s linear infinite, fadeOut 20s linear infinite;
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .cloud::before {
+            width: 60%;
+            height: 60%;
+            top: -30%;
+            left: 20%;
+        }
+
+        .cloud::after {
+            width: 80%;
+            height: 80%;
+            top: 20%;
+            left: -20%;
+        }
+
+        @keyframes moveClouds {
+            from {
+                transform: translateX(-200%);
+            }
+            to {
+                transform: translateX(200%);
+            }
+        }
+
+        @keyframes fadeOut {
+            0%, 80% {
+                opacity: 0.9;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        header {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #00509e;
+        }
+
+        .profile {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 4px solid #007bff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile h2 {
+            margin-top: 10px;
+            font-size: 1.8em;
+            color: #003366;
+        }
+
+        .profile p {
+            font-size: 1em;
+            color: #00509e;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 2px solid #cce7ff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #cce7ff;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .link:last-child {
+            border-bottom: none;
+        }
+
+        .link:hover {
+            background-color: #e0f3ff;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        .link span {
+            font-size: 0.9em;
+            color: #00509e;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #003366;
+            text-align: center;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.link');
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    const anchor = link.querySelector('a');
+                    if (anchor) {
+                        window.location.href = anchor.href;
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="background">
+        <div class="cloud" style="width: 120px; height: 70px; top: 10%; left: -10%; animation-duration: 25s;"></div>
+        <div class="cloud" style="width: 180px; height: 100px; top: 30%; left: -20%; animation-duration: 30s;"></div>
+        <div class="cloud" style="width: 150px; height: 90px; top: 50%; left: -15%; animation-duration: 20s;"></div>
+        <div class="cloud" style="width: 220px; height: 120px; top: 70%; left: -25%; animation-duration: 35s;"></div>
+        <div class="cloud" style="width: 100px; height: 60px; top: 80%; left: -5%; animation-duration: 28s;"></div>
+        <div class="cloud" style="width: 120px; height: 70px; top: 15%; right: -10%; animation-duration: 26s; animation-direction: reverse;"></div>
+        <div class="cloud" style="width: 200px; height: 110px; top: 40%; right: -20%; animation-duration: 32s; animation-direction: reverse;"></div>
+        <div class="cloud" style="width: 140px; height: 80px; top: 60%; right: -15%; animation-duration: 22s; animation-direction: reverse;"></div>
+        <div class="cloud" style="width: 180px; height: 90px; top: 75%; right: -25%; animation-duration: 38s; animation-direction: reverse;"></div>
+    </div>
+
+    <header>
+        <h1>Всем ку</h1>
+    </header>
+
+    <div class="profile">
+        <img src="photo_5438484351693214386_c.jpg" alt="Профіль">
+        <h2>Кирибизян</h2>
+        <p>Ищи меня здесь</p>
+    </div>
+
+    <div class="container">
+        <div class="link">
+            <a href="https://t.me/kiribizyan">Telegram</a>
+            <span>Тут контент</span>
+        </div>
+        <div class="link">
+            <a href="https://m.twitch.tv/businessmanp2p">Twitch</a>
+            <span>Стрими</span>
+        </div>
+        <div class="link">
+            <a href="https://t.me/schitatelb">тг разраба</a>
+            <span>мини игры</span>
+        </div>
+    </div>
+
+    <footer>
+        сделано для бизнеса
+    </footer>
+</body>
+</html>
